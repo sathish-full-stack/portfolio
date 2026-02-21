@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathish P | Full Stack Developer</title>
+    <meta name="description" content="Full-Stack Developer specializing in scalable SaaS and real-time systems.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div id="glow-effect"></div>
+    <div id="cursor-ring"></div>
+
+    <header id="site-header">
+        <nav class="nav-inner">
+            <div class="logo">SATHISH</div>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme" title="Switch Theme">
+                    <i data-lucide="sun" id="theme-icon-sun"></i>
+                    <i data-lucide="moon" id="theme-icon-moon" style="display:none"></i>
+                </button>
+
+                <button id="nav-toggle" class="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu" id="ham-icon-open"></i>
+                    <i data-lucide="x" id="ham-icon-close" style="display:none"></i>
+                </button>
+            </div>
+        </nav>
+
+        <ul class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="hero" class="section full-height">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 id="hero-name"></h1>
+                <p id="hero-role"></p>
+                <p id="hero-tagline"></p>
+                <div class="hero-meta" id="hero-meta"></div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i data-lucide="layout-grid"></i> View Projects
+                    </a>
+                    <a id="download-resume-btn" href="#" class="btn btn-secondary">
+                        <i data-lucide="download"></i> Download Resume
+                    </a>
+                </div>
+                <div id="tech-stack-badges" class="tech-stack"></div>
+                <div class="hero-summary-box" id="hero-summary-box"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title"><i data-lucide="code-2"></i> Technical Expertise</h2>
+            <div id="skills-container" class="bento-grid"></div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title"><i data-lucide="briefcase"></i> Work Experience</h2>
+            <div id="experience-container"></div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title"><i data-lucide="folders"></i> Featured Projects</h2>
+            <div id="projects-container" class="project-showcase"></div>
+        </section>
+
+        <section id="expertise" class="section">
+            <h2 class="section-title"><i data-lucide="award"></i> Core Expertise</h2>
+            <div id="expertise-container"></div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title"><i data-lucide="send"></i> Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info-panel" id="contact-info-panel"></div>
+                <div class="contact-form-panel">
+                    <form id="contact-form" class="elite-card contact-form">
+                        <h3><i data-lucide="mail"></i> Send a Message</h3>
+                        <div class="form-group">
+                            <label for="sender-name">Your Name</label>
+                            <input type="text" id="sender-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-email">Your Email</label>
+                            <input type="email" id="sender-email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="msg-subject">Subject</label>
+                            <input type="text" id="msg-subject" placeholder="Let's collaborate on..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="msg-body">Message</label>
+                            <textarea id="msg-body" rows="5" placeholder="I'd love to discuss..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">
+                            <i data-lucide="send"></i> Send Message
+                        </button>
+                        <p id="form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="logo">SATHISH</div>
+            <p>Full Stack Developer · Building systems that scale and heal.</p>
+            <p class="footer-copy">&copy; 2024 Sathish P. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
