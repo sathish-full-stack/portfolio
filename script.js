@@ -454,7 +454,7 @@ function renderContact() {
             <i data-lucide="${pill.icon}"></i>
             <div class="contact-pill-info">
                 <strong>${pill.label}</strong>
-                <span>${pill.val}</span>
+                ${pill.href ? '' : `<span>${pill.val}</span>`}
             </div>
         `;
         panel.appendChild(el);
