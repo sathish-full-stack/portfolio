@@ -470,62 +470,35 @@ function renderContact() {
                         Prefer remote or hybrid work arrangements from <strong>Tamil Nadu, India</strong>.`
     panel.appendChild(blurb);
 
-    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
         e.preventDefault();
-        const form = e.target;
-        const status = document.getElementById("form-status");
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const origBtnText = submitBtn.innerHTML;
 
         const name = document.getElementById("sender-name").value.trim();
         const email = document.getElementById("sender-email").value.trim();
         const subject = document.getElementById("msg-subject").value.trim();
-        const body = document.getElementById("msg-body").value.trim();
+        const message = document.getElementById("msg-body").value.trim();
 
-        // Prepare data for FormSubmit.co
-        const formData = {
-            name: name,
-            email: email,
-            _subject: subject,
-            message: body,
-            _template: 'table', // Optional: uses a table template for the email
-            _captcha: 'false'   // Optional: disable captcha if you want a seamless experience (requires confirmation once)
-        };
+        const mailSubject = encodeURIComponent(subject);
+        const mailBody = encodeURIComponent(
+            `Hi Sathish,
 
-        try {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i data-lucide="loader-2" class="spin"></i> Sending...`;
-            if (window.lucide) lucide.createIcons();
+            You have received a new message from your portfolio website.
 
-            const response = await fetch(`https://formsubmit.co/ajax/${p.email}`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+            Name: ${name}
+            Email: ${email}
 
-            const result = await response.json();
+            Message:
+            ${message}
 
-            if (response.ok && result.success === "true") {
-                status.textContent = "✓ Message sent successfully!";
-                status.style.color = "#10b981";
-                form.reset();
-            } else {
-                throw new Error(result.message || "Failed to send message.");
-            }
-        } catch (error) {
-            console.error("Submission Error:", error);
-            status.textContent = "✕ Failed to send. Please try again or use direct email.";
-            status.style.color = "#ef4444";
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = origBtnText;
-            if (window.lucide) lucide.createIcons();
-            setTimeout(() => { status.textContent = ""; }, 5000);
-        }
+            Regards,
+            ${name}`
+        );
+
+        const mailtoURL = `mailto:sathish2001p@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+        window.location.href = mailtoURL;
     });
+
 }
 
 function initTheme() {
