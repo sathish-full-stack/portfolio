@@ -467,7 +467,7 @@ function renderContact() {
                         Open to Opportunities
                         </strong>
                         Currently open to full-time roles and engineering opportunities in enterprise SaaS platforms, real-time applications, and scalable web systems. 
-                        Prefer remote or hybrid work arrangements from <strong>Tamil Nadu, India</strong>.`
+                        Prefer remote or hybrid work arrangements.`
     panel.appendChild(blurb);
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
