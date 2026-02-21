@@ -110,19 +110,21 @@
                         <h3><i data-lucide="mail"></i> Send a Message</h3>
                         <div class="form-group">
                             <label for="sender-name">Your Name</label>
-                            <input type="text" id="sender-name" placeholder="John Doe" required>
+                            <input type="text" id="sender-name" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="sender-email">Your Email</label>
-                            <input type="email" id="sender-email" placeholder="john@example.com" required>
+                            <input type="email" id="sender-email" name="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="msg-subject">Subject</label>
-                            <input type="text" id="msg-subject" placeholder="Let's collaborate on..." required>
+                            <input type="text" id="msg-subject" name="_subject" placeholder="Let's collaborate on..."
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="msg-body">Message</label>
-                            <textarea id="msg-body" rows="5" placeholder="I'd love to discuss..." required></textarea>
+                            <textarea id="msg-body" name="message" rows="5" placeholder="I'd love to discuss..."
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">
                             <i data-lucide="send"></i> Send Message
