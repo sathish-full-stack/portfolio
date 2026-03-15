@@ -5,7 +5,8 @@ const DATA = {
         tagline: "Building scalable SaaS platforms and real-time applications with clean architecture, performance-driven design, and reliable engineering practices.",
         summary: "Full-Stack Software Developer with <strong>3+ years of experience</strong> developing <strong>scalable enterprise and SaaS applications</strong> across <strong>healthcare, workforce management, and education domains</strong>. Experienced in building <strong>end-to-end solutions</strong> using <strong>Angular, Vue/Nuxt, React, NestJS, and FastAPI</strong>, with strong expertise in <strong>real-time communication using WebSockets</strong>, <strong>multi-tenant architecture</strong>, and <strong>cloud integrations with AWS</strong>. Focused on writing <strong>maintainable code</strong>, <strong>optimizing performance</strong>, and delivering <strong>production-ready systems</strong>.",
         email: "sathish2001p@gmail.com",
-        linkedin: "www.linkedin.com/in/sathish-a15128255",
+        phone: "+91 6369130069",
+        linkedin: "https://www.linkedin.com/in/sathish-a15128255/",
         location: "Tamil Nadu, India",
         available: true,
         meta: [
@@ -443,6 +444,7 @@ function renderContact() {
     const panel = document.getElementById("contact-info-panel");
     const pills = [
         { icon: "mail", href: `mailto:${p.email}`, label: "Email", val: p.email },
+        { icon: "phone", href: `tel:${p.phone.replace(/\s/g, '')}`, label: "Phone", val: p.phone },
         { icon: "linkedin", href: `https://${p.linkedin}`, label: "LinkedIn", val: p.linkedin },
         { icon: "map-pin", href: null, label: "Location", val: p.location }
     ];
@@ -547,14 +549,22 @@ function initInteractivity() {
     let mouseX = 0, mouseY = 0;
     let ticking = false;
 
-    document.addEventListener("mousemove", e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+    const handleMove = e => {
+        const source = e.touches ? e.touches[0] : e;
+        mouseX = source.clientX;
+        mouseY = source.clientY;
         if (!ticking) {
             requestAnimationFrame(updatePositions);
             ticking = true;
         }
-    });
+    };
+
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("touchmove", handleMove, { passive: true });
+    document.addEventListener("touchstart", handleMove, { passive: true });
+    document.addEventListener("touchend", () => {
+        ring.style.opacity = "0";
+    }, { passive: true });
 
     function updatePositions() {
         glow.style.left = `${mouseX}px`;
