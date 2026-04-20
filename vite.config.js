@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // For GitHub Pages: set base to '/<your-repo-name>/'
-  // For Vercel/Netlify: keep base as '/' (default)
-  base: '/',
+  // GitHub Pages: repo name is 'portfolio' so base must match
+  base: '/portfolio/',
 })
+
