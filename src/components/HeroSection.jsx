@@ -58,7 +58,7 @@ export default function HeroSection({ sectionRef }) {
             <LayoutGrid size={16} /> View Projects
           </a>
           <a
-            href="/resume.pdf"
+            href="resume.pdf"
             download="Sathish_P_Resume.pdf"
             className="btn btn-secondary"
           >

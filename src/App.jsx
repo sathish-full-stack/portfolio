@@ -41,8 +41,7 @@ export default function App() {
       { threshold: 0.12 }
     );
 
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
+    Object.values(sectionRefs.current).forEach((el) => {
       if (el) io.observe(el);
     });
 
