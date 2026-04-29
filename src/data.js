@@ -8,7 +8,7 @@ export const DATA = {
       'Full-Stack Software Developer with <strong>3+ years of experience</strong> developing <strong>scalable enterprise and SaaS applications</strong> across <strong>healthcare, workforce management, and education domains</strong>. Experienced in building <strong>end-to-end solutions</strong> using <strong>Angular, Vue/Nuxt, React, NestJS, and FastAPI</strong>, with strong expertise in <strong>real-time communication using WebSockets</strong>, <strong>multi-tenant architecture</strong>, and <strong>cloud integrations with AWS</strong>. Focused on writing <strong>maintainable code</strong>, <strong>optimizing performance</strong>, and delivering <strong>production-ready systems</strong>.',
     email: "sathish2001p@gmail.com",
     phone: "+91 6369130069",
-    linkedin: "https://www.linkedin.com/in/sathish-a15128255/",
+    linkedin: "https://www.linkedin.com/in/sathish-p-a15128255/",
     location: "Tamil Nadu, India",
     available: true,
     meta: [
