@@ -51,7 +51,7 @@ export default function Header({ theme, onToggleTheme, activeSection }) {
 
         <div className="nav-controls">
           <a
-            href="https://www.linkedin.com/in/sathish-a15128255/"
+            href="https://www.linkedin.com/in/sathish-p-a15128255/"
             target="_blank"
             rel="noreferrer"
             className="theme-btn"
